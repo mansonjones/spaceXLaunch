@@ -108,6 +108,7 @@ struct Constants {
             "Starlink 7",
             "Starlink 8",
             "Starlink v0.9",
+            "SXM-",
             "TESS",
             "Telstar 18V",
             "Telstar 19V",
