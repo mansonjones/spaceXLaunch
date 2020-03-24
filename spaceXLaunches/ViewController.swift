@@ -116,7 +116,7 @@ class ViewController: UIViewController {
     private func filterPastLaunches( launchData : LaunchListQuery.Data.LaunchesPast?, missionName: String, rocketName: String, launchYear: String) -> Bool {
         if let launchData = launchData, let launchDateUtc = launchData.launchDateUtc {
             
-            if (launchData.missionName?.contains(missionName))! &&
+            if launchData.missionName == missionName &&
                 launchData.rocket?.rocketName == rocketName &&
                 getYear(fromUTC: launchDateUtc, year: launchYear) {
                 return true
