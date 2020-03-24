@@ -14,7 +14,59 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
+        // This is use for testing.  Please delete once the app is working
+        Network.shared.apollo.fetch(query: LaunchListQuery()) { result in
+            switch result {
+            case .success(let graphQLResult):
+                
+                // var launches = [LaunchListQuery.Data]()
+                print("Success! Result: \(graphQLResult)")
+                 /*
+                if let launches = graphQLResult.data.flatMap( { $0 }) {
+                    let launch1 = launches.launchesUpcoming
+                    print("FlatMap Start ")
+                print("\(debug)")
+                    print("FlatMap End")
+                }
+                */
+                if let launchesPast = graphQLResult.data?.launchesPast {
+                    for launchPast in launchesPast {
+                        if let missionName = launchPast?.missionName,
+                            let rocketName = launchPast?.rocket?.rocketName,
+                            let launchDate = launchPast?.launchDateUtc,
+                            let videoLink = launchPast?.links?.videoLink
+                        {
+                            print("Past Launch")
+                            print(missionName)
+                            print(rocketName)
+                            print(launchDate)
+                            print(videoLink)
+                            print("\n")
+                        }
+                    }
+                }
+                // Note that there's no video link for the upcoming launches
+                if let launchesUpcoming = graphQLResult.data?.launchesUpcoming {
+                    for launchUpcoming in launchesUpcoming {
+                        if let missionName = launchUpcoming?.missionName,
+                            let rocketName = launchUpcoming?.rocket?.rocketName,
+                            let launchDate = launchUpcoming?.launchDateUtc
+                        {
+                            print("Upcoming Launch")
+                            print(missionName)
+                            print(rocketName)
+                            print(launchDate)
+                            print("\n")
+                        }
+                    }
+                }
+               // print("Success! Result: \(graphQLResult)")
+            
+          case .failure(let error):
+            print("Failure! Error: \(error)")
+          }
+        }
+        
         return true
     }
 

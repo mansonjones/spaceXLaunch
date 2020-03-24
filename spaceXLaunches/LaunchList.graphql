@@ -1,0 +1,23 @@
+query LaunchList {
+  launchesPast(limit:10) {
+    mission_name
+    rocket {
+      rocket_name
+    }
+    launch_date_utc
+    links {
+      video_link
+    }
+  }
+  launchesUpcoming(limit:10) {
+    mission_name
+    rocket {
+      rocket_name
+    }
+    launch_date_utc
+    links {
+      video_link
+    }
+  }
+}
+
