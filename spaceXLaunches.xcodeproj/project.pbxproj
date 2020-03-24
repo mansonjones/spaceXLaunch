@@ -64,6 +64,7 @@
 		3C77F47724257F60009DAA56 /* Network.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		3C77F4B92429269C009DAA56 /* LaunchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchTableViewCell.swift; sourceTree = "<group>"; };
 		3C9BA06E242A8C8F0025DD0F /* LaunchModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchModel.swift; sourceTree = "<group>"; };
+		3C9BA070242AB5610025DD0F /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +132,7 @@
 				3C77F47324257E4A009DAA56 /* LaunchList.graphql */,
 				3C77F47724257F60009DAA56 /* Network.swift */,
 				3C77F44624257A36009DAA56 /* Info.plist */,
+				3C9BA070242AB5610025DD0F /* README.md */,
 			);
 			path = spaceXLaunches;
 			sourceTree = "<group>";
