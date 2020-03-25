@@ -23,7 +23,7 @@ class ViewController: UIViewController {
     var rocketPickerList = [String]()
     var launchYearPickerList = [String]()
     
-    let missionPickerDefault = 92
+    let missionPickerDefault = 90
     let rocketPickerDefault = 1
     let selectedYearDefault = 14
     
