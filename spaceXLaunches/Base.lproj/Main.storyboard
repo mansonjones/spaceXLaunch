@@ -16,7 +16,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="120" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="HMB-AJ-jNQ">
-                                <rect key="frame" x="20" y="44" width="374" height="658"/>
+                                <rect key="frame" x="20" y="44" width="374" height="618"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="LaunchTableViewCell" rowHeight="120" id="kPj-EC-9Vc" customClass="LaunchTableViewCell" customModule="spaceXLaunches" customModuleProvider="target">
@@ -89,21 +89,21 @@
                                 </prototypes>
                             </tableView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qt0-Hl-t8a">
-                                <rect key="frame" x="20" y="762" width="374" height="60"/>
+                                <rect key="frame" x="20" y="742" width="374" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="RhY-hJ-ty5"/>
+                                    <constraint firstAttribute="height" constant="80" id="RhY-hJ-ty5"/>
                                 </constraints>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HZm-R0-tft">
-                                <rect key="frame" x="20" y="802" width="374" height="60"/>
+                                <rect key="frame" x="20" y="782" width="374" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="lLm-b9-mTc"/>
+                                    <constraint firstAttribute="height" constant="80" id="lLm-b9-mTc"/>
                                 </constraints>
                             </pickerView>
                             <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KVX-3x-tdL">
-                                <rect key="frame" x="20" y="722" width="374" height="60"/>
+                                <rect key="frame" x="20" y="682" width="374" height="80"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="60" id="EPi-aP-jEN"/>
+                                    <constraint firstAttribute="height" constant="80" id="EPi-aP-jEN"/>
                                 </constraints>
                             </pickerView>
                         </subviews>
