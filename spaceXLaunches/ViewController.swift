@@ -61,6 +61,8 @@ class ViewController: UIViewController {
     }
     
     private func loadLaunches(missionName: String, rocketName: String, launchYear: String) {
+        // self.pastLaunches.removeAll()
+        // self.upcomingLaunches.removeAll()
         Network.shared.apollo
             .fetch(query: LaunchListQuery()) { [weak self] result in
                 
@@ -77,7 +79,6 @@ class ViewController: UIViewController {
                     
                     if let launchConnection = graphQLResult.data {
                         if let launchesPast = launchConnection.launchesPast {
-                            self.pastLaunches.removeAll()
                             self.pastLaunches
                                 .append(contentsOf: launchesPast.compactMap { $0 }
                                     .filter {
@@ -88,7 +89,6 @@ class ViewController: UIViewController {
                                 })
                         }
                         if let launchesUpcoming = launchConnection.launchesUpcoming {
-                            self.upcomingLaunches.removeAll()
                             self.upcomingLaunches
                                 .append(contentsOf: launchesUpcoming.compactMap { $0 }
                                     .filter {
@@ -113,9 +113,11 @@ class ViewController: UIViewController {
         }
     }
     
-    private func filterPastLaunches( launchData : LaunchListQuery.Data.LaunchesPast?, missionName: String, rocketName: String, launchYear: String) -> Bool {
+    private func filterPastLaunches( launchData : LaunchListQuery.Data.LaunchesPast?,
+                                     missionName: String,
+                                     rocketName: String,
+                                     launchYear: String) -> Bool {
         if let launchData = launchData, let launchDateUtc = launchData.launchDateUtc {
-            
             if launchData.missionName == missionName &&
                 launchData.rocket?.rocketName == rocketName &&
                 getYear(fromUTC: launchDateUtc, year: launchYear) {
@@ -125,7 +127,10 @@ class ViewController: UIViewController {
         return false
     }
     
-    private func filterUpcomingLaunches( launchData: LaunchListQuery.Data.LaunchesUpcoming?, missionName: String, rocketName: String, launchYear: String) -> Bool {
+    private func filterUpcomingLaunches( launchData: LaunchListQuery.Data.LaunchesUpcoming?,
+                                         missionName: String,
+                                         rocketName: String,
+                                         launchYear: String) -> Bool {
         if let launchData = launchData, let launchDateUtc = launchData.launchDateUtc {
             if launchData.missionName == missionName &&
                 launchData.rocket?.rocketName == rocketName &&
@@ -274,7 +279,13 @@ extension ViewController: UIPickerViewDelegate, UIPickerViewDataSource {
         let selectedRocket = rocketPickerList[rocketPicker.selectedRow(inComponent: 0)]
         let selectedYear = launchYearPickerList[launchYearPicker.selectedRow(inComponent: 0)]
 
+        print("selectedMission \(selectedMission)")
+        print("selecgtedRocker \(selectedRocket)")
+        print("selectedYear \(selectedYear)")
+        print("\n")
+        
         loadLaunches(missionName: selectedMission, rocketName: selectedRocket, launchYear: selectedYear)
+        // self.tableView.reloadData()
 
         
     }
